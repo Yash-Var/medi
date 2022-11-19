@@ -40,9 +40,19 @@ class HomePage extends Component {
   home_button_check_event = (e) => {
     // console.log("Event Called");
     if (e.target.checked === true) {
-      return this.setState({ button_is_disabled: false, home_button_checked: true, home_nav_value: true, patient_nav_value: true });
+      return this.setState({
+        button_is_disabled: false,
+        home_button_checked: true,
+        home_nav_value: true,
+        patient_nav_value: true,
+      });
     } else if (e.target.checked === false) {
-      return this.setState({ button_is_disabled: true, home_button_checked: false, home_nav_value: false, patient_nav_value: false });
+      return this.setState({
+        button_is_disabled: true,
+        home_button_checked: false,
+        home_nav_value: false,
+        patient_nav_value: false,
+      });
     }
   };
 
@@ -152,9 +162,19 @@ class HomePage extends Component {
   };
   home_button_check_event = (e) => {
     if (e.target.checked === true) {
-      return this.setState({ button_is_disabled: false, home_button_checked: true, home_nav_value: true, patient_nav_value: true });
+      return this.setState({
+        button_is_disabled: false,
+        home_button_checked: true,
+        home_nav_value: true,
+        patient_nav_value: true,
+      });
     } else if (e.target.checked === false) {
-      return this.setState({ button_is_disabled: true, home_button_checked: false, home_nav_value: false, patient_nav_value: false });
+      return this.setState({
+        button_is_disabled: true,
+        home_button_checked: false,
+        home_nav_value: false,
+        patient_nav_value: false,
+      });
     }
   };
   handleResetClick = () => {};
@@ -181,7 +201,10 @@ class HomePage extends Component {
           user_symptoms: [],
         });
       case "Patient-2":
-        return this.setState({ current_page: "Patient", patient_2_next_button_disabled: false });
+        return this.setState({
+          current_page: "Patient",
+          patient_2_next_button_disabled: false,
+        });
       case "Patient":
         return this.setState({
           current_page: "Home",
@@ -199,9 +222,22 @@ class HomePage extends Component {
     // eslint-disable-next-line default-case
     switch (current_page) {
       case "Home":
-        return <Home isChecked={home_button_checked} checked={this.home_button_check_event} />;
+        return (
+          <Home
+            isChecked={home_button_checked}
+            checked={this.home_button_check_event}
+          />
+        );
       case "Patient":
-        return <Patient male={male} female={female} gender={this.get_gender} age={age} ageChange={this.get_age_event} />;
+        return (
+          <Patient
+            male={male}
+            female={female}
+            gender={this.get_gender}
+            age={age}
+            ageChange={this.get_age_event}
+          />
+        );
       case "Patient-2":
         return <Patient2 callback={this.patient_2_callback} />;
       case "Symptom":
@@ -215,18 +251,34 @@ class HomePage extends Component {
           />
         );
       case "Disease":
-        return <Disease patientInfo={this.state.patient_question} disease_with_possibility={this.state.disease_possibility} gender={this.state.gender} age={this.state.age} />;
+        return (
+          <Disease
+            patientInfo={this.state.patient_question}
+            disease_with_possibility={this.state.disease_possibility}
+            gender={this.state.gender}
+            age={this.state.age}
+          />
+        );
     }
   };
   renderResetButton = () => {
     return (
-      <button className="usa-button usa-button--secondary" onClick={this.symptomPage.current}>
+      <button
+        className="usa-button usa-button--secondary"
+        onClick={this.symptomPage.current}
+      >
         Reset
       </button>
     );
   };
   render() {
-    const { tab_progress, button_is_disabled, patient_2_next_button_disabled, user_symptom_length, current_page } = this.state;
+    const {
+      tab_progress,
+      button_is_disabled,
+      patient_2_next_button_disabled,
+      user_symptom_length,
+      current_page,
+    } = this.state;
     return (
       <React.Fragment>
         <Navbar />
@@ -235,25 +287,78 @@ class HomePage extends Component {
             <div className="grid-row padding-4">
               <div className="desktop:grid-col-2">
                 <ul className="side-menu-list padding-left-2">
-				  <li id="progressbar"><div className={`${tab_progress === 25 && "progressbardiv25"} ${tab_progress === 50 && "progressbardiv50"} ${tab_progress === 75 && "progressbardiv75"} ${tab_progress === 100 && "progressbardiv100"}`}></div></li>
-                  <li className={`${current_page === "Home" ? "active" : "done"}`}>Welcome</li>
-                  <li className={`${tab_progress === 50 && "active"} ${tab_progress < 50 && "list"} ${tab_progress > 50 && "done"}`}>Patient</li>
-                  <li className={`${tab_progress === 75 && "active"} ${tab_progress < 75 && "list"} ${tab_progress > 75 && "done"}`}>Symptom</li>
-                  <li className={`${tab_progress === 100 && "active"} ${tab_progress < 100 && "list"} ${tab_progress > 100 && "done"}`}>Disease</li>
+                  <li id="progressbar">
+                    <div
+                      className={`${tab_progress === 25 &&
+                        "progressbardiv25"} ${tab_progress === 50 &&
+                        "progressbardiv50"} ${tab_progress === 75 &&
+                        "progressbardiv75"} ${tab_progress === 100 &&
+                        "progressbardiv100"}`}
+                    ></div>
+                  </li>
+                  <li
+                    className={`${current_page === "Home" ? "active" : "done"}`}
+                  >
+                    Welcome
+                  </li>
+                  <li
+                    className={`${tab_progress === 50 &&
+                      "active"} ${tab_progress < 50 && "list"} ${tab_progress >
+                      50 && "done"}`}
+                  >
+                    Patient
+                  </li>
+                  <li
+                    className={`${tab_progress === 75 &&
+                      "active"} ${tab_progress < 75 && "list"} ${tab_progress >
+                      75 && "done"}`}
+                  >
+                    Symptom
+                  </li>
+                  <li
+                    className={`${tab_progress === 100 &&
+                      "active"} ${tab_progress < 100 && "list"} ${tab_progress >
+                      100 && "done"}`}
+                  >
+                    Disease
+                  </li>
                 </ul>
               </div>
-              <div className="desktop:grid-col-10" id="ContentDiv padding-bottom-3">
-                <div className="grid-row padding-bottom-4 shoPageSection">{this.showPage()}</div>
+              <div
+                className="desktop:grid-col-10"
+                id="ContentDiv padding-bottom-3"
+              >
+                <div className="grid-row padding-bottom-4 shoPageSection">
+                  {this.showPage()}
+                </div>
               </div>
               <div className="desktop:grid-col-12">
-                <div id="buttonsSection" className="grid-row display-flex padding-left-2 padding-right-2 padding-top-2">
-                  <button disabled={this.state.current_page === "Home"} onClick={this.get_previous_page} className="usa-button usa-button--outline back">
+                <div
+                  id="buttonsSection"
+                  className="grid-row display-flex padding-left-2 padding-right-2 padding-top-2"
+                >
+                  <button
+                    disabled={this.state.current_page === "Home"}
+                    onClick={this.get_previous_page}
+                    className="usa-button usa-button--outline back "
+                  >
                     Back
                   </button>
                   {/* {current_page === "Symptom" ? this.renderResetButton() : ""} */}
                   <button
-                    className={`usa-button ${button_is_disabled || patient_2_next_button_disabled || user_symptom_length === 0 ? "" : "next"}`}
-                    disabled={button_is_disabled || patient_2_next_button_disabled || user_symptom_length === 0}
+                    style={{ backgroundColor: "#16a085" }}
+                    className={`usa-button  ${
+                      button_is_disabled ||
+                      patient_2_next_button_disabled ||
+                      user_symptom_length === 0
+                        ? ""
+                        : "next"
+                    }`}
+                    disabled={
+                      button_is_disabled ||
+                      patient_2_next_button_disabled ||
+                      user_symptom_length === 0
+                    }
                     type="submit"
                     onClick={this.get_next_page}
                   >

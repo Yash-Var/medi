@@ -16,13 +16,13 @@ const Home = (props) => {
           <div class="usa-checkbox">
             <input checked={props.isChecked} onChange={props.checked} class="usa-checkbox__input" id="truth" type="checkbox" name="historical-figures-1" value="truth" />
             <label class="usa-checkbox__label" for="truth">
-              I agree to the DHILab terms and conditions
+              I agree to the We Care terms and conditions
             </label>
           </div>
         </form>
       </div>
 
-      <div className="tablet:grid-col">{/* <img src="/images/TOS.png" /> */}</div>
+      <div className="tablet:grid-col"></div>
     </React.Fragment>
   );
 };

@@ -3,13 +3,13 @@
 }
 .searchSymptomsInput {
   border: none;
-  border-bottom: 1px solid #0a4b76;
+  border-bottom: 1px solid #16a085;
   transition: ease-in-out 0.2s;
   box-sizing: border-box;
   /* font-style: italic; */
 }
 .searchSymptomsInput:focus {
-  /* border-bottom: 1px solid #0a4b76; */
+  /* border-bottom: 1px solid #16a085; */
   outline: none !important;
   border-bottom: 3px solid #0c5f96;
   transition: ease-in-out 0.2s;
@@ -72,7 +72,7 @@ ul.symtomsListBox > li > button {
 .UserSymptoms > ul > li > button {
   border: none;
   background-color: white;
-  color: #0a4b76;
+  color: #16a085;
   border-radius: 5rem;
   font-size: 0.8rem;
   font-weight: 600;
