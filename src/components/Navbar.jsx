@@ -19,14 +19,14 @@ const Navbar = () => {
             <div class="usa-logo margin-0" id="basic-mega-logo">
               <em class="usa-logo__text"> */}
 
-        <a className=" logo" href="http://localhost:9000/">
+        <a className=" logo" href="http://localhost:3030/">
           {" "}
           We Care
         </a>
 
         <div className="display-flex flex-row align-items-center nav-items">
           <a
-            href="http://localhost:9000/"
+            href="http://localhost:3030/"
             title="Home"
             aria-label="Home"
             className="Home"
@@ -34,7 +34,7 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="http://localhost:9000/"
+            href="http://localhost:3030/login"
             title="Home"
             aria-label="Home"
             className="Home"
